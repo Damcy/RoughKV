@@ -28,25 +28,25 @@ a very simple structure Key-Value implemention with high concurrency
 
 ## Functions
 * int Init(const uint64_t& init_data_size)
-> 初始化函数，接受参数为需要申请的data_size的大小
+	> 初始化函数，接受参数为需要申请的data_size的大小
 * int InitMemory() 
-> 初始化value内存块
+	> 初始化value内存块
 * int InitTable() 
-> 初始化key的偏移表示
+	> 初始化key的偏移表示
 * int GetMemoryPos(const uint64_t& offset, char\*& res)
-> 根据连续的内存地址，计算所属的段id和偏移
+	> 根据连续的内存地址，计算所属的段id和偏移
 * int Find(const uint32_t& key, char\*& res, uint32_t& len)
-> 查找key对应的值，返回起始指针于res中，value长度存于len
+	> 查找key对应的值，返回起始指针于res中，value长度存于len
 * int Push(const uint32_t& key, const char* data, const uint32_t& len) 
-> 根据len插入key对应的value
+	> 根据len插入key对应的value
 * int OpenChecker() 
-> 在插入结束后，需要调用该函数开启查询接口
+	> 在插入结束后，需要调用该函数开启查询接口
 * int CloseChecker() 
-> 在查询结束需要变更为插入模式时，需要调用这个接口
+	> 在查询结束需要变更为插入模式时，需要调用这个接口
 * int UnitTest(const char* input_file) 
-> 对于push的单测，输入参数为二进制文件地址
+	> 对于push的单测，输入参数为二进制文件地址
 * int UnitTestCheck(const char* input_file) 
-> 对于check的单测，输入参数和UnitTest一致，会自动检测写入内存的value和文件中的是否一致
+	> 对于check的单测，输入参数和UnitTest一致，会自动检测写入内存的value和文件中的是否一致
 
 ## Input
 接收二进制数据，读取顺序为key，value_length，value
