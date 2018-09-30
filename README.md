@@ -4,7 +4,7 @@ a very simple structure Key-Value implemention with high concurrency
 一个简单的高并发Key-Value系统
 
 ## Background
-有一批KV数据（Key为uint32_t类型，不连续，Value的大小不超过2KB），一共有30亿条，Value一共90GB左右，需要在接近100G的内存中，将上诉数据存下，并能准确写入和读出，满足高并发要求。
+有一批KV数据（Key为uint32_t类型，不连续，Value的大小不超过2KB），一共有30亿条，Value一共90GB左右，需要在接近100G的内存中，将这些数据存下，并能准确写入和读出，满足高并发要求。
 
 ## Analyse
 1. KV系统一般是使用hash map实现
@@ -27,7 +27,7 @@ a very simple structure Key-Value implemention with high concurrency
 	- （更优化方案可以使用uint16_t进行偏置，但需要更多分片）
 
 ## Functions
-1. int Init(const uint64_t& init_data_size)
+* int Init(const uint64_t& init_data_size)
 > 初始化函数，接受参数为需要申请的data_size的大小
 2.	int InitMemory() 
 > 初始化value内存块
